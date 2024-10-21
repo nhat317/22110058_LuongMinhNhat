@@ -130,16 +130,16 @@ docker pull vulnerables/web-dvwa
 docker run --rm -it -p 80:80 vulnerables/web-dvwa
 ```
 
-Open your browser and navigate to http://localhost. You should see the DVWA login page.
+Open your browser and navigate to http://localhost. You should see the DVWA login page. <br>
 ![](./imgs/task2_1.png)
 
-Login with the default credentials:
+Login with the default credentials: <br>
 
-Username: admin
-Password: password
+Username: admin <br>
+Password: password <br>
 ![](./imgs/task2_2.png)
 
-**Question 1**: Use sqlmap to get information about all available databases
+**Question 1**: Use sqlmap to get information about all available databases <br>
 **Answer 1**:
 ```
 sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit" --dbs
